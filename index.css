@@ -38,7 +38,7 @@ header h2 {
 main {
     width: 100vw;
     height: 95vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2)), url("./CSS/Artist/swauv0e.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2)), url("swauv0e.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -104,4 +104,5 @@ p {
     height: 18vh;
     border: none;      /* remove default border */
     z-index: 1000;     /* make sure it sits above other elements */
+
 }
