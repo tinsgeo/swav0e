@@ -1,10 +1,14 @@
-*, body, html {
+*,
+body,
+html {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body, html {
     height: 100%;
+    font-family: system-ui, sans-serif;
 }
 
 header {
@@ -14,6 +18,20 @@ header {
     justify-content: space-around;
     align-items: center;
     background-color: orange;
+}
+
+header h2 {
+    color: white;
+    font-family: "Freckle Face", system-ui;
+    width: 2vw;
+    height: 4vh;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 header li {
@@ -28,50 +46,43 @@ header a {
     text-decoration: none;
 }
 
-header h2 {
-    color: white;
-    font-family: "Freckle Face", system ui;
-    width: 2vw;
-    height: 4vh;
-}
-
 main {
     width: 100vw;
     height: 95vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2)), url("swauv0e.jpeg");
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 
-    display: flex;            /* enables Flexbox */
-    flex-direction: column;   /* stack children vertically */
-    justify-content: center;  /* center vertically */
-    align-items: center;      /* center horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh;
 }
 
 p {
     color: white;
-    font: bold;
+    font-weight: bold;
 }
 
 .outline {
     border: solid 10px orange;
     text-align: center;
-    width: 60%;     /* take up most of screen width */
+    width: 60%;
     height: 40vh;
     margin: 0 0 2em;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 }
 
 .outline h1 {
     color: orange;
     font-family: "Freckle Face", system-ui;
-    font-size: 10vw; /* 10% of viewport width */
-    line-height: 1;  /* avoid extra vertical spacing */
+    font-size: 10vw;
+    line-height: 1;
 }
 
 .social-media-bar {
@@ -90,19 +101,140 @@ p {
     width: 2vw;
     height: auto;
     max-height: 4vh;
-}
-
-.social-media-icons:hover {
+    margin: 0.5vh 0;
     cursor: pointer;
 }
 
 .iframe {
-    position: fixed;   /* stays in place even when scrolling */
-    bottom: 2vh;         /* stick to bottom edge */
-    left: 2vw;           /* stick to left edge */
-    width: 20vw;      /* adjust size as needed */
+    position: fixed;
+    bottom: 2vh;
+    left: 2vw;
+    width: 20vw;
     height: 18vh;
-    border: none;      /* remove default border */
-    z-index: 1000;     /* make sure it sits above other elements */
+    border: none;
+    z-index: 1000;
+}
 
+@media screen and (max-width: 600px) {
+    /* Header stacking */
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 1vh 0;
+    }
+
+    header h2 {
+        width: auto;
+        font-size: 6vw;
+        margin-bottom: 1vh;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header li {
+        margin: 0.5vh 0;
+    }
+
+    main {
+        height: auto;
+        padding: 5vh 2vw;
+        background-position: top center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .outline {
+        width: 90%;
+        height: auto;
+        padding: 1em;
+        border-width: 5px;
+    }
+
+    .outline h1 {
+        font-size: 12vw;
+        text-align: center;
+    }
+
+    .social-media-bar {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 2vh;
+    }
+
+    .social-media-bar ul {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .social-media-icons {
+        width: 10vw;
+        max-height: 6vh;
+        margin: 0 1vw;
+    }
+
+    .iframe {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 80vw;
+        height: 25vh;
+        margin-top: 3vh;
+        bottom: auto;
+    }
+}
+
+/* Responsive: Tablets */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    header h2 {
+        font-size: 4vw;
+    }
+
+    header li {
+        margin: 0 1vw;
+    }
+
+    main {
+        height: 95vh;
+        background-position: center center;
+    }
+
+    .outline {
+        width: 80%;
+        height: 35vh;
+        border-width: 8px;
+    }
+
+    .outline h1 {
+        font-size: 10vw;
+    }
+
+    .social-media-bar {
+        bottom: 2vh;
+        right: 2vw;
+    }
+
+    .social-media-icons {
+        width: 4vw;
+        max-height: 5vh;
+    }
+
+    .iframe {
+        width: 30vw;
+        height: 20vh;
+        bottom: 2vh;
+        left: 2vw;
+        position: fixed;
+    }
+}
+
+/* Responsive: Desktops */
+@media screen and (min-width: 1025px) {
 }
